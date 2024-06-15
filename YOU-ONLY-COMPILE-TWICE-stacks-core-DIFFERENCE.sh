@@ -1,3 +1,5 @@
+#runs without a shebang honest once it has chmod +x on the file
+
 echo "THIS FILE IS FOR COIN DEVELOPERS WHO WANT CLARITY THINK LITECOIN, BCH, DOGECOIN, ETC"
 echo ""
 echo ""
