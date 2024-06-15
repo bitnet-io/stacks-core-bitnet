@@ -1,0 +1,12 @@
+-----BEGIN NAMESPACES-----
+namespace_id,address,buckets,base,coeff,nonalpha_discount,no_vowel_discount,lifetime
+-----END NAMESPACES-----
+-----BEGIN NAMES-----
+name,address,zonefile_hash
+-----END NAMES-----
+-----BEGIN STX BALANCES-----
+address,balance
+-----END STX BALANCES-----
+-----BEGIN STX VESTING-----
+address,value,blocks
+-----END STX VESTING-----

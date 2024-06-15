@@ -1,12 +1,8 @@
-# stacks-core-bitnet
-
-
 <p align="left">
   <a href="https://stacks.co">
     <img alt="BitStacks" src="https://github.com/bitnet-io/stacks-core-bitnet/releases/download/Stacks-2.0-mining-for-Bitcoin-people/zzwnCnY.png" width="250" />
   </a>
 </p>
-
 
 
 ```
@@ -126,4 +122,15 @@ You can learn more by visiting [the Stacks Website](https://stacks.co) and check
 - [Mining](./docs/mining.md)
 - [Profiling](./docs/profiling.md)
 - [RPC endpoints](./docs/rpc-endpoints.md)
-- [Event dispatcher](./docs/event-dispat
+- [Event dispatcher](./docs/event-dispatcher.md)
+
+You can also read the technical papers:
+
+- ["PoX: Proof of Transfer Mining with Bitcoin"](https://community.stacks.org/pox), May 2020
+- ["Stacks 2.0: Apps and Smart Contracts for Bitcoin"](https://stacks.org/stacks), Dec 2020
+
+## Copyright and License
+
+The code and documentation copyright are attributed to stacks.org.
+
+This code is released under the [GPL v3 license](https://www.gnu.org/licenses/quick-guide-gplv3.en.html), and the docs are released under the [Creative Commons license](https://creativecommons.org/).
