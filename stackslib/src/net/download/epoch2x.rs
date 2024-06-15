@@ -551,7 +551,7 @@ impl BlockDownloader {
                                     }
                                     Err(net_error::NotFoundError) => {
                                         // remote peer didn't have the block
-                                        info!("Remote neighbor {:?} ({:?}) does not actually have block {} indexed at {} ({})", &block_key.neighbor, &block_key.data_url, block_key.sortition_height, &block_key.index_block_hash, &block_key.consensus_hash);
+                                     //   info!("Remote neighbor {:?} ({:?}) does not actually have block {} indexed at {} ({})", &block_key.neighbor, &block_key.data_url, block_key.sortition_height, &block_key.index_block_hash, &block_key.consensus_hash);
 
                                         // the fact that we asked this peer means that it's block inv indicated
                                         // it was present, so the absence is the mark of a broken peer
