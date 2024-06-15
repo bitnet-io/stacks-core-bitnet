@@ -227,8 +227,8 @@ impl HttpPeer {
         let client_addr = match socket.peer_addr() {
             Ok(addr) => addr,
             Err(e) => {
-                warn!("Failed to get peer address of {:?}: {:?}", &socket, &e);
-                let _ = network_state.deregister(event_id, &socket);
+        //        warn!("Failed to get peer address of {:?}: {:?}", &socket, &e);
+          //      let _ = network_state.deregister(event_id, &socket);
                 return Err(net_error::SocketError);
             }
         };
