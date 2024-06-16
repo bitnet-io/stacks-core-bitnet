@@ -43,21 +43,35 @@ fn print_msg_header(mut rd: &mut dyn RecordDecorator, record: &Record) -> io::Re
 
     rd.start_timestamp()?;
     let system_time = SystemTime::now();
+
+    let current_local: DateTime<Local> = Local::now();
+    let custom_format = current_local.format("%Y-%m-%d %H:%M:%S");
+//    println!("{}", custom_format); // Outputs: 2023-10-03 16:41:00
+
+
     match &*STACKS_LOG_FORMAT_TIME {
         None => {
-            let elapsed = system_time
-                .duration_since(SystemTime::UNIX_EPOCH)
-                .unwrap_or(Duration::from_secs(0));
-            write!(
-                rd,
-                "[{:5}.{:06}]",
-                elapsed.as_secs(),
-                elapsed.subsec_micros()
-            )?;
+		    let current_local: DateTime<Local> = Local::now();
+		    let custom_format = current_local.format("%Y-%m-%d %H:%M:%S");
+		    write!(rd, "[{}]", custom_format); // Outputs: 2023-10-03 16:41:00
+
+
+//            let elapsed = system_time
+//                .duration_since(SystemTime::UNIX_EPOCH)
+//                .unwrap_or(Duration::from_secs(0));
+//            write!(
+//                rd,
+//                "[{:5}.{:06}]",
+ //               "[{}]",
+//		custom_format
+//                elapsed.as_secs(),
+//                elapsed.subsec_micros()
+  //          )?;
         }
         Some(ref format) => {
             let datetime: DateTime<Local> = system_time.into();
-            write!(rd, "[{}]", datetime.format(format))?;
+  //          write!(rd, "[{}]", datetime.format(format))?;
+            write!(rd, "[{}]", custom_format)?;
         }
     }
     write!(rd, " ")?;

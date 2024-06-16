@@ -135,7 +135,7 @@ impl PeerNetwork {
                 Ok(w) => {
                     return Ok(w);
                 }
-                Err(e) => {
+                Err(_e) => {
 //                    info!(
   //                      "{:?}: failed to begin outbound walk ({:?}); trying pingback walk",
     //                    &self.local_peer, &e

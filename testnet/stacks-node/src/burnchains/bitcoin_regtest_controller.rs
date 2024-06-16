@@ -741,8 +741,8 @@ impl BitcoinRegtestController {
                 Ok(utxos) => {
                     break utxos;
                 }
-                Err(e) => {
-                    error!("Bitcoin RPC failure: error listing utxos {:?}", e);
+                Err(_e) => {
+                    error!("Bitnet IO RPC failure: error listing utxos\n\n\n MAKE SURE THAT YOU SPECIFY\n\n wallet_name = YOUR-WALLET-NAME\n\nINSIDE OF CONFIG.TOML under the [burnchain] section of the config\n\nAND RESTART THE STACKS-NODE\n\n");
                     sleep_ms(5000);
                     continue;
                 }
@@ -772,8 +772,10 @@ impl BitcoinRegtestController {
 
                 utxos = match result {
                     Ok(utxos) => utxos,
-                    Err(e) => {
-                        error!("Bitcoin RPC failure: error listing utxos {:?}", e);
+                    Err(_e) => {
+//                  error!("Bitcoin RPC failure: error listing utxos {:?}", e);
+                    error!("Bitnet IO RPC failure: error listing utxos\n\n\n MAKE SURE THAT YOU SPECIFY\n\nwallet_name = YOUR-WALLET-NAME\n\nINSIDE OF CONFIG.TOML under the burnchain section of the config\n\n");
+
                         sleep_ms(5000);
                         continue;
                     }

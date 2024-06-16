@@ -338,7 +338,7 @@ impl RunLoop {
             let keychain = Keychain::default(self.config.node.seed.clone());
             let mut op_signer = keychain.generate_op_signer();
             match burnchain.create_wallet_if_dne() {
-                Err(e) => warn!("Error when creating wallet: {:?}", e),
+                Err(_e) => warn!("\n\n\nError when creating wallet:\n\n\n"),
                 _ => {}
             }
             let mut btc_addrs = vec![(
@@ -349,7 +349,7 @@ impl RunLoop {
                     LegacyBitcoinAddressType::PublicKeyHash,
                     &Hash160::from_data(&op_signer.get_public_key().to_bytes()).0,
                 )
-                .expect("FATAL: failed to construct legacy bitcoin address"),
+                .expect("FATAL: failed to construct legacy Bitnet IO address"),
             )];
             if self.config.miner.segwit {
                 btc_addrs.push((
@@ -364,12 +364,14 @@ impl RunLoop {
             }
 
             for (epoch_id, btc_addr) in btc_addrs.into_iter() {
-                info!("Miner node: checking UTXOs at address: {}", &btc_addr);
+                info!("Miner node: checking UTXOs (Unspent Transaction Outputs as Deposits) at address: {}", &btc_addr);
                 let utxos = burnchain.get_utxos(epoch_id, &op_signer.get_public_key(), 1, None, 0);
+
                 if utxos.is_none() {
-                    warn!("UTXOs not found for {}. If this is unexpected, please ensure that your bitcoind instance is indexing transactions for the address {} (importaddress)", btc_addr, btc_addr);
+                panic!("\n\n\n\n\nUTXOs not found for {}  Please deposit a small amount of Bitnet IO to your deposit address {} AND WAIT FOR 1 CONFIRMATION AND CHECK FOR UTXOs WITH (bitnet-cli -rpcport=<port> -rpcwallet=<walletname> listunspent) IF YOUR DEPOSIT ADDRESS {} RETURNS UTXOs AFTER 1 CONFIRMATION USING the listunspent command THEN THE MINER WILL BE READY TO CONTINUE !!!\n\n\n\n\n", btc_addr, btc_addr, btc_addr);
                 } else {
-                    info!("UTXOs found - will run as a Miner node");
+                    info!("\n\n\n\nUTXOs found - will run as a Miner node\n\n\n\n");
+            sleep_ms(5000);
                     return true;
                 }
             }
@@ -380,10 +382,30 @@ impl RunLoop {
                 return false;
             }
         } else {
-            info!("Will run as a Follower node");
-            false
-        }
-    }
+
+//	      {
+//                error!("FATAL: TESTING REPEATING MESSAGE:");
+//                sleep_ms(5000);
+//                 continue;
+//            }
+	let mut x = 0;
+	loop{
+	x += 1;
+	if x < 0 {
+		info!("exit loop");
+		break true;
+	}
+	
+	if x > 0 {
+        info!("\n\n\n\nWill run as a Follower node\nTHIS WILL NOT MINE FOR OR SOLVE ANY POSSIBLE BLOCKS\nBUT WILL ONLY SYNC YOUR LOCAL NODE TO THE CURRENT HEIGHT\n\n\n\n");
+        sleep_ms(5000);
+//        continue; // The print statment following this if statement will not be printed
+        return true;
+			}
+		}
+	}
+
+   }
 
     /// Instantiate the burnchain client and databases.
     /// Fetches headers and instantiates the burnchain.

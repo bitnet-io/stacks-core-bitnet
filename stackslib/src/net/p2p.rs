@@ -2813,7 +2813,7 @@ impl PeerNetwork {
                     return false;
                 }
             }
-            Err(e) => {
+            Err(_e) => {
                 if !self
                     .local_peer
                     .addrbytes
@@ -3849,11 +3849,11 @@ impl PeerNetwork {
                             self.mempool_sync_reset();
                             return (true, None);
                         }
-                        Err(e) => {
+                        Err(_e) => {
                             // done
-                            warn!("mempool_sync_send_query({}) returned {:?}", url, &e);
-                            self.mempool_sync_reset();
-                            return (true, None);
+//                            warn!("mempool_sync_send_query({}) returned {:?}", url, &e);
+//                            self.mempool_sync_reset();
+//                            return (true, None);
                         }
                     }
                 }
