@@ -2429,13 +2429,13 @@ impl ConversationP2P {
                     // reconnect on its own.
                     // However, only count this message as error.  Drop all other queued
                     // messages.
-                    info!(
-                        "{:?}: Received invalid preamble; dropping connection",
-                        &self
-                    );
-                    self.stats.msgs_err += 1;
-                    self.stats.add_healthpoint(false);
-                    return Err(e);
+//                    info!(
+//                        "{:?}: Received invalid preamble; dropping connection",
+//                        &self
+//                    );
+//                    self.stats.msgs_err += 1;
+//                    self.stats.add_healthpoint(false);
+//                    return Err(e);
                 }
                 _ => {
                     // skip this message
