@@ -41,6 +41,20 @@ https://github.com/bitnet-io/bitnet-core/blob/main/src/chainparams.cpp#L114-L118
 "
 
 
+echo 
+"
+
+stackslib/src/core/mod.rs EPOCH ACTIVATION HAS TO HAVE ENOUGH SPACE BETWEEN STARTING POINTS OR POX WILL INTERNALLY BREAK GOING FROM POX EPOCH 2_0 into 2_05 and possible 2_1
+
+pub const BITCOIN_MAINNET_STACKS_2_05_BURN_HEIGHT: u64 = 189_800;  <-- 2_05 must have enough space from 2_0 with blocks
+
+pub const BITCOIN_MAINNET_STACKS_21_BURN_HEIGHT: u64 = 191_000;  <-- must have enough space for enough cycles to take place "think more than 1000 blocks"
+
+pub const BITCOIN_MAINNET_STACKS_22_BURN_HEIGHT: u64 = 193_800; ... and so on
+pub const BITCOIN_MAINNET_STACKS_23_BURN_HEIGHT: u64 = 195_600; ... and so on .... etc
+
+"
+
 echo "https://github.com/stacks-network/stacks-core/archive/refs/tags/2.5.0.0.3.tar.gz"
 
 mkdir check-difference-stacks-node
