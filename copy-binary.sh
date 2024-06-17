@@ -1,3 +1,5 @@
+rm -rf stacks-bitnet-nakamoto-binary-deb10
+mkdir stacks-bitnet-nakamoto-binary-deb10
 rm -rf ./stacks-bitnet-nakamoto-binary-deb10/*
 rm -rf stacks-bitnet-nakamoto-binary-deb10.tar
 rm -rf stacks-bitnet-nakamoto-binary-deb10.tar.gz

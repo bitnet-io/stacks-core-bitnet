@@ -2984,7 +2984,7 @@ impl RelayerThread {
 
             let reward_block_height = mined_block.header.total_work.work + MINER_REWARD_MATURITY;
             info!(
-                "Relayer: Won sortition! Mining reward will be received in {} blocks (block #{})",
+                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRelayer: Won sortition! Mining reward will be received in {} blocks (block #{})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
                 MINER_REWARD_MATURITY, reward_block_height
             );
             debug!("Relayer: Won sortition!";
