@@ -1,3 +1,5 @@
+STACKS_LOG_DEBUG=1
+
 <p align="left">
   <a href="https://stacks.co">
     <img alt="BitStacks" src="https://github.com/bitnet-io/stacks-core-bitnet/releases/download/Stacks-2.0-for-Bitcoin-people/zzwnCnY.png" width="250" />
