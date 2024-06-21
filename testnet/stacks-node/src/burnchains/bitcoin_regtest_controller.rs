@@ -1643,12 +1643,12 @@ impl BitcoinRegtestController {
             ) {
                 Some(utxos) => utxos,
                 None => {
-                    warn!(
-                        "No UTXOs for {} ({}) in epoch {}",
-                        &public_key.to_hex(),
-                        &addr2str(&addr),
-                        epoch_id
-                    );
+                //    warn!(
+                //        "No UTXOs for {} ({}) in epoch {}",
+                //        &public_key.to_hex(),
+                //        &addr2str(&addr),
+                //        epoch_id
+                //    );
                     return None;
                 }
             };
