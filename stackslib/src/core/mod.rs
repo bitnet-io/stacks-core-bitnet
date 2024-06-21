@@ -135,7 +135,7 @@ pub const BITCOIN_MAINNET_STACKS_30_BURN_HEIGHT: u64 = 2_000_000;
 
 pub const STACKS_2_0_LAST_BLOCK_TO_PROCESS: u64 = 190_500;
 pub const MAINNET_2_0_GENESIS_ROOT_HASH: &str =
-	"854ef109358dc3a0c9be879b93167f7216c548b88d1119a8f502687e9c6fa230";
+	"15aa2024fdfcd9b53091b8f79d24f0a83c0df7e5967356f17b6c2a7a40a20cc2";
 
 /// This is the "dummy" parent to the actual first burnchain block that we process.
 pub const FIRST_BURNCHAIN_CONSENSUS_HASH: ConsensusHash = ConsensusHash([0u8; 20]);
