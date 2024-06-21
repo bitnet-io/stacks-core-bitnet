@@ -2346,8 +2346,9 @@ impl ConversationP2P {
                     return Err(net_error::PermanentlyDrained);
                 }
                 Err(e) => {
-                    info!("{:?}: failed to recv on P2P conversation: attempting to continue {:?}", self, &e);
-//                    return Err(e);
+                   // info!("{:?}: failed to recv on P2P conversation: attempting to continue {:?}", self, &e);
+                   //   return Err(e);
+                    continue;
                 }
             }
         }
