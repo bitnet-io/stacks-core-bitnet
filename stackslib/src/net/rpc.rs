@@ -638,8 +638,9 @@ impl ConversationHttp {
             let sz = match self.connection.send_data(w) {
                 Ok(sz) => sz,
                 Err(e) => {
-                    info!("{:?}: failed to send on HTTP conversation: {:?}", self, &e);
-                    return Err(e);
+                  //  info!("{:?}: failed to send on HTTP conversation: {:?}", self, &e);
+                  //  return Err(e);
+                      continue;
                 }
             };
             test_debug!("{:?}: Sent {} bytes (total {})", self, sz, total_sz);
