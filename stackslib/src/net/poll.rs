@@ -423,8 +423,8 @@ impl NetworkState {
                             Some(eid) => eid,
                             None => {
                                 // no poll slots available. Close the socket and carry on.
-                                info!("Too many peers on {:?}, closing {:?} (events: {}, in-flight: {}, capacity: {})", &server.server_socket, &client_sock, self.event_map.len(), new_events.len(), self.event_capacity);
-                                let _ = client_sock.shutdown(Shutdown::Both);
+                              //  info!("Too many peers on {:?}, closing {:?} (events: {}, in-flight: {}, capacity: {})", &server.server_socket, &client_sock, self.event_map.len(), new_events.len(), self.event_capacity);
+                              //  let _ = client_sock.shutdown(Shutdown::Both);
                                 continue;
                             }
                         };
