@@ -4,12 +4,12 @@
 (define-constant MAX_POX_REWARD_CYCLES u12)
 
 ;; Default length of the PoX registration window, in burnchain blocks.
-(define-constant PREPARE_CYCLE_LENGTH u40)
+(define-constant PREPARE_CYCLE_LENGTH u100)
 
 
 ;; Default length of the PoX reward cycle, in burnchain blocks.
 ;;(define-constant REWARD_CYCLE_LENGTH u2100)
-(define-constant REWARD_CYCLE_LENGTH u140) 
+(define-constant REWARD_CYCLE_LENGTH u400) 
 
 
 
